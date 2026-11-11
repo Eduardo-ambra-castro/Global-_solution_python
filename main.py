@@ -1,30 +1,35 @@
 import os
 os.system("cls")
 
+# Loop principal: o menu é exibido até o usuário escolher sair
 while True:
-    print("\nBem-vindo ao Smart Way - Sistema de Transporte Metropolitano de São Paulo")
-    print("1- Consultar linhas do metrô")
-    print("2- Consultar lotação das linhas")
-    print("3- Consultar lotação por vagão")
-    print("4- Consultar horários de menor movimento")
-    print("5- Consultar informações de acessibilidade")
-    print("6- Registrar uma ocorrência")
-    print("7- Sair do sistema")
+    print(f"""\nBem-vindo ao Smart Way - Sistema de Transporte Metropolitano de São Paulo
+    1- Consultar linhas do metrô
+    2- Consultar lotação das linhas
+    3- Consultar lotação por vagão
+    4- Consultar horários de menor movimento
+    5- Consultar informações de acessibilidade
+    6- Registrar uma ocorrência
+    7- Sair do sistema
+    """)
 
+    # Lê a opção escolhida pelo usuário
     opcao = input("Escolha uma opção: ")
 
+    # Executa a ação correspondente à opção escolhida
     match opcao:
+        # Opção 1: mostra o status de funcionamento de cada linha
         case "1":
             print(f"""\n LINHAS DO TRANSPORTE METROPOLITANO DE SÃO PAULO
 
-            \n       METRÔ 
+                METRÔ 
             Linha 1 - Azul: Aberta
             Linha 2 - Verde: Aberta
             Linha 3 - Vermelha: Em manutenção
             Linha 4 - Amarela: Aberta
             Linha 5 - Lilás: Fechada
             Linha 15 - Prata: Aberta
-            \n       TRENS
+                TRENS
             Linha 7 - Rubi: Aberta
             Linha 8 - Diamante: Aberta
             Linha 9 - Esmeralda: Em manutenção
@@ -33,11 +38,11 @@ while True:
             Linha 12 - Safira: Fechada
             Linha 13 - Jade: Aberta\n
             """)
-
+        # Opção 2: mostra a lotação geral da linha escolhida
         case "2":
             print(f"""\nLOTAÇÃO DAS LINHAS DO TRANSPORTE METROPOLITANO DE SÃO PAULO
 
-            \n       METRÔ 
+            \n    METRÔ 
             Linha 1 - Azul")
             Linha 2 - Verde")
             Linha 3 - Vermelha")
@@ -45,7 +50,7 @@ while True:
             Linha 5 - Lilás")
             Linha 15 - Prata")
 
-            \n       TRENS
+            \n   TRENS
             Linha 7 - Rubi
             Linha 8 - Diamante
             Linha 9 - Esmeralda
@@ -86,11 +91,11 @@ while True:
                     print("Linha Jade: Moderado")
                 case _:
                     print("Linha inválida.")
-
+        # Opção 3: mostra a lotação de cada vagão da linha escolhida
         case "3":
             print(f"""\nLOTAÇÃO POR VAGÃO DAS LINHAS DO TRANSPORTE METROPOLITANO DE SÃO PAULO
 
-            \n       METRÔ 
+            \n  METRÔ 
             Linha 1 - Azul
             Linha 2 - Verde
             Linha 3 - Vermelha
@@ -98,7 +103,7 @@ while True:
             Linha 5 - Lilás
             Linha 15 - Prata
 
-            \n       TRENS
+            \n TRENS
             Linha 7 - Rubi
             Linha 8 - Diamante
             Linha 9 - Esmeralda
@@ -258,26 +263,28 @@ while True:
 
                 case _:
                     print("Linha inválida.")
-
+        # Opção 4: mostra o melhor e o pior horário para viajar
         case "4":
             print("\nHORÁRIOS DE MENOR E MAIOR MOVIMENTO")
 
-            print("\n       METRÔ")
-            print("Linha 1 - Azul")
-            print("Linha 2 - Verde")
-            print("Linha 3 - Vermelha")
-            print("Linha 4 - Amarela")
-            print("Linha 5 - Lilás")
-            print("Linha 15 - Prata")
+            print(f"""\n METRÔ
+            Linha 1 - Azul
+            Linha 2 - Verde
+            Linha 3 - Vermelha
+            Linha 4 - Amarela
+            Linha 5 - Lilás
+            Linha 15 - Prata
+            """)
 
-            print("\n       TRENS")
-            print("Linha 7 - Rubi")
-            print("Linha 8 - Diamante")
-            print("Linha 9 - Esmeralda")
-            print("Linha 10 - Turquesa")
-            print("Linha 11 - Coral")
-            print("Linha 12 - Safira")
-            print("Linha 13 - Jade")
+            print(f"""\n TRENS
+            Linha 7 - Rubi
+            Linha 8 - Diamante
+            Linha 9 - Esmeralda
+            Linha 10 - Turquesa
+            Linha 11 - Coral
+            Linha 12 - Safira
+            Linha 13 - Jade
+            """)
 
             horario = input("\nEscolha uma linha: ")
 
@@ -363,11 +370,11 @@ while True:
                 case _:
                     print("Linha inválida.")
 
-
+        # Opção 5: mostra os recursos de acessibilidade da linha
         case "5":
             print(f"\nINFORMAÇÕES DE ACESSIBILIDADE")
 
-            print(f"""\n       METRÔ
+            print(f"""\n METRÔ
             Linha 1 - Azul
             Linha 2 - Verde
             Linha 3 - Vermelha
@@ -376,7 +383,7 @@ while True:
             Linha 15 - Prata
             """)
 
-            print(f"""\n       TRENS
+            print(f"""\n TRENS
             Linha 7 - Rubi
             Linha 8 - Diamante
             Linha 9 - Esmeralda
@@ -494,12 +501,12 @@ while True:
 
                 case _:
                     print("Linha inválida.")
-
+        # Opção 6: registra uma ocorrência informada pelo usuário
         case "6":
             print("Por favor, forneça os detalhes da ocorrência que deseja registrar.")
             input("Digite a ocorrência: ")
             print("Ocorrência registrada com sucesso.")
-
+        # Opção 7: encerra o programa saindo do loop
         case "7":
             print("Smart Way Encerrado.")
             break
