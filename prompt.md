@@ -1,0 +1,1 @@
+Não foram utilizados recursos de IA para a realização do trabalho.
